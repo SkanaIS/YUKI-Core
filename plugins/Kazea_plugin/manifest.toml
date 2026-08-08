@@ -1,0 +1,10 @@
+name = "Kazea_plugin"
+version = "0.1.0"
+main = "plugin.py"
+author = "Kazea"
+description = "Kazea 快捷指令 — @recall / @ban"
+entry_class = "KazeaPlugin"
+pip_dependencies = []
+
+[dependencies]
+YUKI_agent = ">=0.1.0"

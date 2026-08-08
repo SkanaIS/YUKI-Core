@@ -1,0 +1,9 @@
+name = "YUKI_agent"
+version = "0.1.0"
+main = "plugin.py"
+author = "Kazea"
+description = "YUKI Agent — 工作空间沙箱，代码执行需管理员确认"
+entry_class = "YUKIAgentPlugin"
+pip_dependencies = []
+
+[dependencies]

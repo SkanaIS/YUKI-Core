@@ -38,7 +38,8 @@ ncatbot init
 ```
 
 添加 AI 适配器和 Napcat /QQ 适配器。
-填写 NapCat WebSocket 地址、令牌、机器人 QQ、管理员 QQ 等信息。
+配置机器人 QQ、管理员 QQ 等信息。
+配置模型提供商。
 
 然后在 `.env` 中填写 API Key：
 
@@ -46,11 +47,7 @@ ncatbot init
 DEEPSEEK_API_KEY=sk-xxxxx
 ```
 
-### 3. 启动 NapCat
-
-确保 NapCat 已启动并配置好 WebSocket 连接。
-
-### 4. 启动机器人
+### 3. 启动 YUKI
 
 调试模式（热重载、详细日志）：
 

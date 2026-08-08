@@ -7,13 +7,11 @@ data/
 napcat/
 .vscode/
 
-# 配置文件（含令牌和 QQ，上传前需脱敏）
+# 配置文件
 config.yaml
 plugins/Kazea_plugin/config.yaml
 
-# Minecraft 运行时产物
-YUKI_SPACE/mcserver/logs/
-YUKI_SPACE/mcserver/world/
-YUKI_SPACE/mcserver/jdk/
+
 
 # NcatBot 框架文档（非本项目代码）\ndocs/\n\n# 系统产物\n.DS_Store\nThumbs.db
+docs/

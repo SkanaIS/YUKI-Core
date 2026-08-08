@@ -6,14 +6,14 @@
 
 ```
 YUKI Core/
-├── config.yaml              # 机器人配置（已 gitignore，用 config.example.yaml 参考）
-├── .env                     # API Key（已 gitignore）
+├── config.yaml              # 机器人配置
+├── .env                     # API Key
 ├── plugins/
 │   ├── YUKI_agent/          # 核心 AI Agent 插件
 │   │   ├── plugin.py        # 主逻辑：事件处理、AI 对话循环、工具调度、审批流程
 │   │   ├── tools.py         # 沙箱工具：文件操作、代码执行
 │   │   ├── render.py        # 审批卡片渲染（Pillow）
-│   │   └── sentlog.py       # 已发送消息 ID 记录（用于引用回复判断）
+│   │   └── sentlog.py       # 发送消息 ID 记录（引用回复判断）
 │   └── Kazea_plugin/        # 管理员 @指令 入口
 │       └── plugin.py        # @recall / @ban / @clear / @prompt / @reloadmd
 ├── YUKI_SPACE/              # YUKI 工作空间（沙箱目录）
@@ -71,7 +71,7 @@ ncatbot run
 - `@YUKI <消息>` — @ 机器人唤醒
 - `yuki <消息>` — 关键词触发（默认 `yuki`）
 - 回复 YUKI 的消息 — 引用即触发
-- 接续对话 — 互动后 180 秒内自动续聊（可开关）
+- 接续对话 — 互动后 180 秒内自动续聊（config.yaml）
 
 ### 工作空间沙箱
 
@@ -108,7 +108,7 @@ YUKI 可使用 Bing 搜索实时信息。
 | 命令 | 效果 |
 |---|---|
 | `/clear` | 清除当前会话上下文 |
-| `@prompt <内容>` | 设置越狱指令（最高优先级） |
+| `@prompt <内容>` | 设置越狱指令（最高优先级prompt） |
 | `@prompt clear` | 清除越狱指令 |
 | `@reloadmd` | 重载 YUKI.md |
 

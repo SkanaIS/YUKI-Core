@@ -1,6 +1,6 @@
 # YUKI Core
 
-基于 NcatBot 框架的 QQ 机器人，搭载 AI Agent「YUKI」，提供工作空间沙箱、代码执行、群管理、联网搜索等能力。
+基于 NcatBot 框架的 QQ 机器人，搭载基于 DeepSeek 的 AI Agent「YUKI」，提供工作空间沙箱、代码执行、群管理、联网搜索等能力。
 
 ## 架构
 
@@ -31,21 +31,14 @@ YUKI Core/
 pip install -r requirements.txt
 ```
 
-### 2. 配置
-
-复制配置示例并填入真实值：
+### 2. 初始化配置
 
 ```bash
-cp config.example.yaml config.yaml
+ncatbot init
 ```
 
-编辑 `config.yaml`：
-
-- `ws_uri` / `ws_token` — NapCat WebSocket 地址和令牌
-- `webui_token` — WebUI 访问令牌
-- `bot_uin` — 机器人 QQ 号
-- `root` — 管理员 QQ 号
-- `base_url` / `completion_model` — AI API 地址和模型
+添加 AI 适配器和 Napcat /QQ 适配器。
+填写 NapCat WebSocket 地址、令牌、机器人 QQ、管理员 QQ 等信息。
 
 然后在 `.env` 中填写 API Key：
 
@@ -59,20 +52,28 @@ DEEPSEEK_API_KEY=sk-xxxxx
 
 ### 4. 启动机器人
 
+调试模式（热重载、详细日志）：
+
 ```bash
-python -m ncatbot
+ncatbot dev
+```
+
+生产模式：
+
+```bash
+ncatbot run
 ```
 
 ## 功能
 
-### 🤖 AI 对话
+### AI 对话
 
 - `@YUKI <消息>` — @ 机器人唤醒
 - `yuki <消息>` — 关键词触发（默认 `yuki`）
 - 回复 YUKI 的消息 — 引用即触发
 - 接续对话 — 互动后 180 秒内自动续聊（可开关）
 
-### 📂 工作空间沙箱
+### 工作空间沙箱
 
 YUKI 的所有文件操作限制在 `YUKI_SPACE/` 目录内：
 
@@ -80,7 +81,7 @@ YUKI 的所有文件操作限制在 `YUKI_SPACE/` 目录内：
 - 发送文件 / 图片到群或私聊
 - 接收的附件自动保存到 `received/`
 
-### 💻 代码执行（需管理员确认）
+### 代码执行（需管理员确认）
 
 - `run_python` — 执行 Python 代码
 - `run_shell` — 执行 Shell 命令
@@ -93,16 +94,16 @@ YUKI 的所有文件操作限制在 `YUKI_SPACE/` 目录内：
 | `deny` / `no` / `n` | 拒绝当前请求 |
 | `allow_task` / `allowtask` | 同任务后续请求自动放行 |
 
-### 🔧 群管理
+### 群管理
 
 - `@recall <自然语言>` — AI 理解并撤回消息
 - `@ban <自然语言>` — AI 理解并禁言成员
 
-### 🌐 联网搜索
+### 联网搜索
 
 YUKI 可使用 Bing 搜索实时信息。
 
-### ⚙️ 管理员命令
+### 管理员命令
 
 | 命令 | 效果 |
 |---|---|

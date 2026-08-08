@@ -39,6 +39,7 @@ ncatbot init
 
 添加 AI 适配器和 Napcat /QQ 适配器。
 配置机器人 QQ、管理员 QQ 等信息。
+
 配置模型提供商。
 
 然后在 `.env` 中填写 API Key：
@@ -60,6 +61,20 @@ ncatbot dev
 ```bash
 ncatbot run
 ```
+
+### 4. 现代编程
+
+如果你对古法编程有一定研究，则可以忽略本节。
+
+获取用户参考手册，包含示例代码、使用指南、领域技能和 API 参考。以便于 AI 正确理解 NcatBot 的架构和开发规范，进行辅助开发。
+
+```bash
+ncatbot ref                  # 交互式选择 IDE
+ncatbot ref --vscode         # VSCode + Copilot
+ncatbot ref --trae           # Trae（自动将 .agents 重命名为 .trae）
+ncatbot ref --cursor         # Cursor
+```
+
 
 ## 功能
 
@@ -115,6 +130,8 @@ YUKI 可使用 Bing 搜索实时信息。
 - 代码执行需管理员逐次或批量确认
 - 禁止踢人、退群、删好友等破坏性操作
 
-## 鸣谢
+## 相关链接
 
-- [NcatBot](https://github.com/AnomalyCat/ncatbot) — QQ 机器人框架
+- [NcatBot 框架文档](https://docs.ncatbot.xyz/)
+- [AI 编程工具选择指南](https://docs.ncatbot.xyz/guide/ai-dev-tools/#%E9%80%89%E6%8B%A9%E4%BD%A0%E7%9A%84-ai-%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7)
+- [NcatBot GitHub](https://github.com/AnomalyCat/ncatbot)
